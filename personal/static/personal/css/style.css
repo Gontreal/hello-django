@@ -1,0 +1,52 @@
+body{
+  padding-top: 70px;
+  padding:50px;
+  
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  background: #3a6186; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #EDE574,#E1F5C4); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #FFEEEE,#DDEFBB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+#projects{
+  padding-top: 50px;
+  
+}
+
+
+#contact-info{
+  padding-top: 50px;
+  
+}
+h2,h3,h4{
+  font-weight:bold;
+  font-family: 'Roboto', sans-serif !important;
+  
+  text-align:center;
+  text-transform:uppercase;
+}
+
+
+h5{
+    font-family: 'Teko',sans-serif !important;
+    font-weight:bold;
+    font-size:2em !important;
+  }
+
+  .Iam{
+  font-family: 'Oleo Script', cursive;
+  
+  }
+  .Ialso{
+    font-family: 'Oleo Script', cursive;
+    font-size:1.3em;
+  }
+
+
+
+
+footer{
+  font-family: 'Indie Flower','cursive';
+  text-align:center;
+  font-size:25px;
+  padding-top:70px;
+}

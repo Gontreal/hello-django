@@ -1,0 +1,29 @@
+ {%block content%}
+  {% load staticfiles%}
+<div class="row">
+        <div class="col-md-8 col-lg-8 col-sm-8">
+          <h2>A little about me</h2>
+          <h5>I am...</h5>
+          <ul class="lead Iam">
+            <li>An awesome C++ and Python programer</li>
+            <li> Algorithm and datastruction master.</li>
+            <li>Familiar with HTML,CSS, JavaScript and Django and web.py framework. </li>
+            <li>The designer of this website and its upcomming applications. </li>
+          </ul>
+          <h5>I also have...</h5>
+          <ul class="Ialso">
+            <li>Academic experience in ASIC digital design and simulation  using VHDL(both structural and behavioral)</li>
+            <li>Good understanding of functional hardware verification methodology and experienced in building verification environment using System Verilog</li>
+            <li>Solid background in control systems, digital communication system and modeling, simulating the systems in MATLAB and embedded system development</li>
+          </ul>
+          <h5> Most importantly...</h5>
+          <p>I learnt things fast and I don't give up easily.</p>
+          <p> I'm an excellent teamplayer.</p>
+        </div>
+        <div col-md-4 col-lg-4 col-sm-4>
+          <img class="img-responsive img-thumbnail" src="{% static 'personal/images/profile.jpg' %}" alt="my avatar">
+         
+        </div>
+        
+      </div>
+{%endblock%}

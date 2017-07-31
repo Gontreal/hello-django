@@ -1,8 +1,75 @@
 {%extends "personal/header.html"%}
 
 {%block content%}
-<p>
-    Hi, this is Gong Zhang's personal website.
-</p>
-{% include "personal/includes/block1.html"%}
+       <nav class="navbar navbar-inverse navbar-fixed-top"  id="nbar">
+      <ul class="nav nav-pills" >
+      <li role="presentation" id="tar2"><a href="#intro">About me</a></li>
+      <li role="presentation"><a href="#projects">Projects</a></li>
+      <li role="presentation"><a href="#contact-info">Contract me</a></li>
+      </ul>
+   </nav>
+   
+ <!-- end nav-->
+  <main>
+    <div class="jumbotron" id="intro">
+      {% include "personal/includes/profile.html"%}
+    </div>
+    <!-- Project Section-->
+    <div id="projects" >
+      <h2>Projects I've done</h2>
+      <div class="row">
+        <div class="col-sm-6 col-md-4 col-lg-4">
+           {% include "personal/includes/project1.html"%}
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-4">
+            {% include "personal/includes/project2.html"%}
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-4">
+            {% include "personal/includes/project3.html"%}
+        </div>
+      </div>
+    </div>
+    <!-- Contact Section-->
+   <div class="container-fluid" id="contact-info">
+     <h2>Contact Information</h2>
+     <div class="row">
+       <div class="col-md-4 col-lg-4 well well-lg">
+         <address>
+            <strong>Home Address</strong><br>
+              I guess you have to ask me,:)<br>
+              Montreal, QC 94103<br>
+             <abbr title="Phone">P:</abbr> (514) 623-0339 
+         </address>
+
+         <address>
+          <strong>Email Address</strong><br>
+          <a href="mailto:zg25634153@gmail.com">zg25634153@gmail.com</a>
+        </address>
+         <address>
+          <strong>Wechat</strong><br>
+           gong900311<br>
+           <abbr title="QQ">Q:</abbr> 236440817
+        </address>
+         
+         <div>
+         <strong>Social Network</strong><br>
+           <br>
+         <div class="container-fluid">
+           <div class="row">
+            {% include "personal/includes/social-icon.html"%}
+          </div>
+        </div>
+       </div>
+       </div>
+       
+       <div class="col-md-8 col-lg-8 ">
+         {% include "personal/includes/contact-form.html"%}
+       </div>
+     </div>
+    </div>
+     
+  </main>
+         
+         
+  
 {%endblock%}
