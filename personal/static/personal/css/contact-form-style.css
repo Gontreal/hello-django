@@ -45,10 +45,10 @@ textarea.form-control {
 }
 
 .submit{
-  font-size: 0.5em;
   float: right;
   width: 100px;
-  background-color: transparent;
-  color: #fff;
+  font-size: 0.5em;
+  background-color: #fff; 
+  color: #000;
 
 }

@@ -4,5 +4,5 @@ $(document).ready(function() {
 
     $('body').scrollspy({ target:'#nbar'})
 
-    $("#tar2").addClass("active");
+   // $("#tar2").addClass("active");
 });
