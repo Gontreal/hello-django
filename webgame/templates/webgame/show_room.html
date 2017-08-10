@@ -1,0 +1,22 @@
+
+{% extends "personal/header.html"%}
+
+{% block content %}
+    <h1>{{name}}</h1>
+    <pre>{{description}}</pre>
+    
+    {% if end %}
+            <a href="{% url 'games:welcome' %}"> Play Again?</a>
+    
+    {%else%}
+        <form action="{% url 'games:engine'%}" method="POST" >
+            {% csrf_token %}
+             -<input type="text" name="your_move"> <input type="SUBMIT">
+             
+            {% if tries_left %}
+                <p> {{tries_left}} times left.</p>
+            {% endif %}
+        </form>
+   {% endif %}
+ 
+{%endblock%}

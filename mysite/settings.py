@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'webapp',
+    'webgame',
     'personal',
     'blog',
     'django.contrib.admin',
