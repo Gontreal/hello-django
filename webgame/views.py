@@ -10,14 +10,9 @@ def index(request):
     
     request.session['name'] = map.start.name
     request.session['description'] = map.start.description
-    request.session['count']=3
-    #GameEngine(map.start)
-    
+    request.session['count']=9
     return HttpResponseRedirect(reverse('games:engine'))
-    #return render(request,'webgame/show_room.html',context)
-    #return GET(request,map.start.name)
- 
-  
+    
 def game_engine(request):
     room=map.look_up.get(request.session['name'],None)
     if request.method=='POST':
@@ -26,7 +21,6 @@ def game_engine(request):
             request.session['count']-=1
            
         action=request.POST['your_move']
-        #next_room=room
         if action:
             if room.check_path(action):
                 room=room.go(action)
@@ -42,16 +36,14 @@ def game_engine(request):
     else:
         context={
         'name': room.name,
-        #'name':request.session['name']
-        'description':room.description,
-        #'tries_left':request.session['count'] 
+        'description':room.description
         }
         if room.name in ['death','You Won','You Lost']:
             context['end']=True
             request.session.flush()
         if room.name=='keypad':
             context['tries_left']=request.session['count'] 
-            #context['tries_left'] = '%d' %room.count
+           
         return render(request,'webgame/show_room.html',context)   
        
         
