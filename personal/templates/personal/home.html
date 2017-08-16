@@ -1,17 +1,25 @@
 {%extends "personal/header.html"%}
 
 {%block content%}
-       <nav class="navbar navbar-inverse navbar-fixed-top"  id="nbar">
-      <ul class="nav nav-pills" >
-      <li role="presentation" id="tar2"><a href="#intro">About me</a></li>
-      <li role="presentation"><a href="#projects">Projects</a></li>
-      <li role="presentation"><a href="#contact-info">Contract me</a></li>
-      </ul>
-   </nav>
-   
- <!-- end nav-->
-  <main>
-    <div class="jumbotron" id="intro">
+ {% load staticfiles%}
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript" src="{% static 'personal/js/index.js' %}"></script>
+
+ <div class="row">
+    <div class="col-md-2"  id="sidebar-wrapper">
+         <div id="sidebar" class="container" role="navigation">
+            <ul class="nav nav-pills  list-group affix">
+              <li role="presentation" class="list-group-item"><a href="#intro" >About me</a></li>
+              <li role="presentation" class="list-group-item"><a href="#projects">Projects I've Done</a></li>
+              <li role="presentation" class="list-group-item"><a href="#contact-info">Contact me</a></li>
+                
+            </ul>
+            </div>
+     </div>
+    
+    <div class="col-md-10" id="main-wrapper">
+      <!-- Profile Section-->
+        <div class="jumbotron" id="intro">
       {% include "personal/includes/profile.html"%}
     </div>
     <!-- Project Section-->
@@ -68,8 +76,14 @@
      </div>
     </div>
      
-  </main>
          
+        
+     </div>
+     
+ </div>
+      
+
+
          
   
 {%endblock%}
