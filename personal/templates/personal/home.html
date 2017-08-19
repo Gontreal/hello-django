@@ -6,6 +6,7 @@
 <script type="text/javascript" src="{% static 'personal/js/index.js' %}"></script>
 
  <div class="row">
+     <!--Left navbar affixed TODO: HIDDEN WHEN IN SMALL SCREEN-->
     <div class="col-md-2"  id="sidebar-wrapper">
          <div id="sidebar" class="container" role="navigation">
             <ul class="nav nav-pills  list-group affix">
@@ -17,7 +18,7 @@
             </div>
      </div>
     
-    <div class="col-md-10" id="main-wrapper">
+    <div class="col-md-10 col-sm-12" id="main-wrapper">
       <!-- Profile Section-->
         <div class="jumbotron" id="intro">
       {% include "personal/includes/profile.html"%}
