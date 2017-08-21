@@ -1,7 +1,26 @@
 {% extends "personal/header.html"%}
 
 {% block content %}
-   <h3>{{post.title}}</h3>
-   <h6>on {{post.date}}</h6>
-    {{post.body|safe|linebreaks}}
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-8 col-sm-12">
+           <h3>{{post.title}}</h3>
+            <h6 class="text-center">on {{post.date}}</h6>
+            <div >
+                {{post.body|safe|linebreaks}}
+            </div>
+        </div>
+         <div class="col-md-4 col-sm-12">
+             <div id="sidebar" class="container">
+            <ul class=" list-group">
+              <li role="presentation" class="list-group-item"><a href="#intro" >About me</a></li>
+              <li role="presentation" class="list-group-item"><a href="#projects">Projects I've Done</a></li>
+              <li role="presentation" class="list-group-item"><a href="#contact-info">Contact me</a></li>
+            </ul>
+            </div>
+     </div>
+    </div>
+</div>
+
 {%endblock%}

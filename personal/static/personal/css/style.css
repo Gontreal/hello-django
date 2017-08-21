@@ -4,7 +4,7 @@ html{
   min-height: 100% ;
 }
 body{
-  padding-top: 100px;
+  padding-top: 105px;
   padding-bottom: 60px;
   font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
   background: #3a6186; /* fallback for old browsers */
@@ -12,7 +12,23 @@ body{
   background: linear-gradient(to left, #FFEEEE,#DDEFBB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   
 }
-
+.hr-style{
+    height: 30px;
+  border-style: solid;
+  border-color: #8c8b8b;
+  border-width: 1px 0 0 0;
+  border-radius: 20px;
+}
+.hr-style:before{
+    display: block;
+  content: "";
+  height: 30px;
+  margin-top: -31px;
+  border-style: solid;
+  border-color: #8c8b8b;
+  border-width: 0 0 1px 0;
+  border-radius: 20px;
+}
 .list-group-item {
     
     
@@ -25,10 +41,7 @@ body{
 }
 
 
-#contact-info{
-  padding-top: 20px;
-  
-}
+
 h2,h3,h4{
   font-weight:bold;
   font-family: 'Roboto', sans-serif !important;

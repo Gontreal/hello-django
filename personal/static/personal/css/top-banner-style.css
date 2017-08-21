@@ -1,10 +1,9 @@
 .navbar-brand {
     font-size: 24px;
   font-family: 'Indie Flower','cursive';
-     font-weight:bold;
-  transform: translateX(-50%);
-  left: 50%;
-  position: absolute;
+  color:#A43931;
+  font-weight:bold;
+
 }
 
 
@@ -12,6 +11,19 @@
     padding: 20px 0 20px 0;
 
 
+}
+
+.navbar.navbar-fixed-top {
+
+    border-color: #008080;
+
+}
+.nav > li > a {
+
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
 .navbar.navbar-fixed-top.fixed-theme {

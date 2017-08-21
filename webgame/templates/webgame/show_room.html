@@ -2,21 +2,25 @@
 {% extends "personal/header.html"%}
 
 {% block content %}
+<div class="container">
     <h1>{{name}}</h1>
     <pre>{{description}}</pre>
-    
+
     {% if end %}
             <a href="{% url 'games:welcome' %}"> Play Again?</a>
-    
+
     {%else%}
-        <form action="{% url 'games:engine'%}" method="POST" >
+        <form action="{% url 'games:engine'%}"  method="POST" class="form-inline">
             {% csrf_token %}
-             -<input type="text" name="your_move"> <input type="SUBMIT">
-             
+             <input type="text" name="your_move" class="form-control" placeholder="What's your next move?">
+            <button type="submit" class="btn btn-primary">Confirm</button>
+            <br>
             {% if tries_left %}
-                <p> {{tries_left}} times left.</p>
+                <small class="text-danger"> {{tries_left}} times left.</small>
             {% endif %}
         </form>
    {% endif %}
+</div>
+
  
 {%endblock%}
