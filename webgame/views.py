@@ -1,18 +1,19 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 
-#from django.urls import reverse
+# from django.urls import reverse
 from django.core.urlresolvers import reverse
 from .game import map
 
+
 # Create your views here.
 def index(request):
-    
     request.session['name'] = map.start.name
     request.session['description'] = map.start.description
     request.session['count']=9
     return HttpResponseRedirect(reverse('games:engine'))
-    
+
+
 def game_engine(request):
     room=map.look_up.get(request.session['name'],None)
     if request.method=='POST':

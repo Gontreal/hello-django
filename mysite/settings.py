@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'webgame',
     'personal',
+    'MatchingMakingSim',
     'blog',
     'django.contrib.admin',
     'django.contrib.auth',
