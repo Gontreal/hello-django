@@ -1,7 +1,12 @@
 {%block content%}
   {% load staticfiles%}
- <link rel="stylesheet" href="{% static 'personal/css/top-banner-style.css'%}" charset="utf-8" type="text/css" />
-    <nav id="header" class="navbar navbar-fixed-top">
+<!--style sheet-->
+<link rel="stylesheet" href="{% static 'personal/css/top-banner-style.css'%}" charset="utf-8" type="text/css" />
+<!--javascript-->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+<script type="text/javascript" src="{% static 'personal/js/index.js' %}"></script>
+
+<nav id="header" class="navbar navbar-fixed-top">
             <div id="header-container" class="container navbar-container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed text-center" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -18,12 +23,12 @@
                         <li ><a href="{% url 'blogs:List' %}">Blog</a></li>
                         <li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                              Projects
+                              Projects <span class="caret"></span>
                           </a>
                           <ul class="dropdown-menu">
                             <li><a href="{% url 'games:welcome' %}">Webgame</a></li>
                               <li role="separator" class="divider"></li>
-                            <li><a href="#">Dating Simulation</a></li>
+			      <li><a href="{%url 'matches:intro' %}">Match Making Simulation</a></li>
                           </ul>
                         </li>
                     </ul>

@@ -1,0 +1,80 @@
+ {%block content%}
+ {% load staticfiles%}
+
+<button type="button" class="btn btn-primary btn-lg " data-toggle="modal" data-target="#exampleModal"> Launch the Demo</button>
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat" disabled>Validation</button>
+<button type="button" class="btn btn-primary btn-lg " id="reset-page">RESET</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">Tell me about you</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" id="info-form">
+          <p class="text-center" id="form-status"></p>
+          <div class="row">
+            <div class="col-md-5">
+              <div class="form-group" id="appearenceBox">
+                <label for="inputAppearence" class="col-sm-4 control-label">Appearence</label>
+                <div class="col-sm-8">
+                  <input type="number" name="appearence" class="form-control" id="inputAppearence" placeholder="0~100" required>
+                </div>
+              </div>
+              <div class="form-group" id="personalityBox">
+                <label for="inputPersonality" class="col-sm-4 control-label">Personality</label>
+                <div class="col-sm-8">
+                  <input type="number" name="personality" class="form-control" id="inputPersonality" placeholder="0~100"required>
+                </div>
+              </div>
+              <div class="form-group" id="wealthBox">
+                <label for="inputWealth" class="col-sm-4 control-label">Wealth</label>
+                <div class="col-sm-8">
+                  <input type="number" name="wealth" class="form-control" id="inputWealth" placeholder="0~100"required>
+                </div>
+              </div>
+             <small class="text-danger" id="err1"></small>
+            </div>
+            <div class="col-md-7">
+              <div class="form-group" id="exAppearenceBox">
+                <label for="inputExAppear" class="col-sm-6 control-label">Expect Appearence</label>
+                <div class="col-sm-6">
+                  <input type="number" name="ex-appearence" class="form-control" id="inputExAppear" placeholder="0~100" required>
+                </div>
+              </div>
+              <div class="form-group" id="exPersonalityBox">
+                <label for="inputExPerson" class="col-sm-6 control-label">Expect Personality</label>
+                <div class="col-sm-6">
+                  <input type="number" name="ex-personality" class="form-control" id="inputExPerson" placeholder="0~100" required>
+                </div>
+              </div>
+              <div class="form-group" id="exWealthBox">
+                <label for="inputExWealth" class="col-sm-6 control-label">Expect Wealth</label>
+                <div class="col-sm-6">
+                  <input type="number" name="ex-wealth" class="form-control" id="inputExWealth" placeholder="0~100" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <span id="gender-text">Now tell me you are a : </span>
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Man"> Man
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Woman"> Woman
+            </label>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="LaunchSim" data-complete-text="Matching Complete" data-loading-text="Matching">Tell Him</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+ {%endblock%}

@@ -1,0 +1,104 @@
+ {%block content%}
+ {% load staticfiles%}
+ <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          In case you need more information about this simulation:
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+       <h4>Objective: 
+Build a model to simulate the match making process of modern society.</h4>
+
+For the simplicity of the model, assume each individual has 3 indices: wealth, appearence, personality.
+Each index is in the range of 1-100. <br>
+On top of that, each individual weighs those 3 qualitires diffrently, 
+e.g. on person may care the appearence much more than the others 2 qualities, 
+while this other person may care more about  personality of its counterpart.
+As a result, there are another 3 index depicting the expectation ratios of those three qualities
+and natrally, these 3 index have a total sum of 100.<br>
+For example:
+For a male player, a valid vector of indices of him is as following:
+(80,50,40,10,30,60)
+In which, his appearence socored as 80, wealth as 50, personality as 40
+and his expectation of the apearence of his perfect match is 10%, wealth 30% and personality 60%.
+10+30+60==100. <br>
+
+To further simplify the model, it is assumed that the information is symmetrical,
+meaning those 3 indices of each individual is public record and objective，
+and each individual choose its perfect match based on its own perception ratios.
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          More about the matching process:
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        In this project, assume there are 100 male and female each.
+In the match making process, each individual select its perfect match by evaluate 3 qualities of 
+its counterpart as follow: <br>
+Suppose a male player's profile is as follow:M(80,50,40,10,30,60)
+and a female player: F(50,60,80,40,10,50).<br>
+Thus, the attraction level of this man towards the womman is evaluated as:
+10*50+30*60+60*80=7100. <br>
+ While, the woman towards the man:
+40*80+10*50+50*40=5700. <br>
+Obviously, the perfect match for each individual is the one with the highest score.
+Additionally, if two player possess the same score of attraction, then compare the sum of those 
+3 indices: appearence+wealth+personality. <br>
+If still the same, then the one with smaller ID wins, IDs are given as the first element of
+the profile vector of each player in the input file: male.txt and female.txt <br> <br>
+
+Now that we have specified the rules of finding the perfect match, the whole match making 
+process goes as following procedures: <br>
+        <ol>
+          <li>Start with the male players, specifically, going through each male player, each select his dream girl by applying the rules mentioned above and invite that girl.</li>
+          <li>Then the female player who received the most invitations select her best suit.</li>
+          <li>At this point, we find a match, remove them from the player pool.</li>
+          <li>Lastly, return to step 1 and iterate through this process for the rest of the player until 
+the last man match the last woman.</li>
+        </ol>
+        <br>
+        In this project, it is also required that a user could input its own profile, replace a random player of the same sex, and go 
+through the process as the main charactor to find its perfect match, then ouput the result.
+the ID of the main charactor is suggested to be defined as -1 in order to be selected first in the process. <br>
+Hence, a third file, containing the profile vectors of the main charactor, is given and in those
+vectors, the first element is the sex of the player 1 for male, 0 for female.
+In all, 3 standard input files are given: male.txt, female.txt, player.txt. <br><br>
+
+For testing, 2 results are given: <br>
+the first main charactor(the first line in the player.txt) should select the player with profile as follow: <br>
+(6,18,82,87,3,10). Please note that the id is ignoed. <br>
+the second main charactor(the second line) should select: <br>
+(27,74,22,22,58,20).
+
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Some Explanation of my implementation and some thougnts.
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        To Be Continue in my blog.
+      </div>
+    </div>
+  </div>
+  </div>
+
+ {%endblock%}

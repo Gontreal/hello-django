@@ -6,7 +6,7 @@ $( document ).ready(function() {
     $('body').scrollspy({ target: '#sidebar',offset:200 });
     //$("#tar2").addClass("active");
    // $('#sidebar-wrapper').css('background-color','black');
-    console.log( "ready!" );
+    console.log( "this is personal!" );
 
     /**
      * This object controls the nav bar. Implement the add and remove

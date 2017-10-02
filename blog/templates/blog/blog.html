@@ -2,27 +2,25 @@
 
 
  {% block content %}
-    <div class="container">
-         <div class="row">
-
-        <div class="col-md-8 col-sm-12">
+    <div class="row">
+	
+        <div class="col-md-10">
             <table>
                 {% for post in object_list %}
                     <h5 >{{ post.date|date:"Y-m-d" }} <a href="{% url 'blogs:Detail' post.id %}" >{{post.title}} </a></h5>
                 {% endfor %}
             </table>
         </div>
-         <div class="col-md-4 col-sm-12">
-             <div id="sidebar" class="container">
-            <ul class=" list-group">
-              <li role="presentation" class="list-group-item"><a href="#intro" >About me</a></li>
-              <li role="presentation" class="list-group-item"><a href="#projects">Projects I've Done</a></li>
-              <li role="presentation" class="list-group-item"><a href="#contact-info">Contact me</a></li>
+        <div class="col-md-2">
+           <div id="sidebar">
+            <ul class=" nav nav-tabs nav-stacked">
+              <li role="presentation" ><a href="#intro" >About me</a></li>
+              <li role="presentation" ><a href="#projects">Projects I've Done</a></li>
+              <li role="presentation" ><a href="#contact-info">Contact me</a></li>
 
             </ul>
             </div>
-        </div>
+        </div> 
     </div>
-    </div>>
 {%endblock%}
 

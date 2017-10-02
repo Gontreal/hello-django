@@ -2,17 +2,16 @@
 
 {%block content%}
  {% load staticfiles%}
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script type="text/javascript" src="{% static 'personal/js/index.js' %}"></script>
+
 
  <div class="row">
      <!--Left navbar affixed TODO: HIDDEN WHEN IN SMALL SCREEN-->
-    <div class="col-md-2"  id="sidebar-wrapper">
+    <div class="col-md-2 "  id="sidebar-wrapper">
          <div id="sidebar" class="container" role="navigation">
-            <ul class="nav nav-pills  list-group affix">
-              <li role="presentation" class="list-group-item"><a href="#intro" >About me</a></li>
-              <li role="presentation" class="list-group-item"><a href="#projects">Projects I've Done</a></li>
-              <li role="presentation" class="list-group-item"><a href="#contact-info">Contact me</a></li>
+            <ul class="nav nav-pills nav-stacked  affix">
+              <li role="presentation"><a href="#intro" >About me</a></li>
+              <li role="presentation" ><a href="#projects">Projects I've Done</a></li>
+              <li role="presentation"><a href="#contact-info">Contact me</a></li>
                 
             </ul>
             </div>
@@ -23,7 +22,7 @@
         <div class="jumbotron" id="intro">
       {% include "personal/includes/profile.html"%}
     </div>
-         <hr class="hr-style">
+         <!--<hr class="hr-style">-->
     <!-- Project Section-->
     <div id="projects" >
       <h2>Projects I've done</h2>
@@ -39,7 +38,7 @@
         </div>
       </div>
     </div>
-         <hr class="hr-style">
+         <!--<hr class="hr-style">-->
     <!-- Contact Section-->
    <div class="container-fluid" id="contact-info">
      <h2>Contact Information</h2>

@@ -1,15 +1,17 @@
  {%block content%}
-    {% load staticfiles%}
- <link rel="stylesheet" href="{% static 'personal/css/contact-form-style.css'%}"charset="utf-8" type="text/css" />
-    <section id="contact">
-          <div class="section-content">
+{% load staticfiles%}
+<link rel="stylesheet" href="{% static 'personal/css/contact-form-style.css'%}"charset="utf-8" type="text/css" />
+
+<section id="contact">
+	<div class="section-content">
             <h3 class="section-header">Get in <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Touch with me</span></h3>
             <h4>Leave anything you want, and I'll get back to you as soon as I can.</h4>
           </div>
           <div class="contact-section">
-          <div class="container">
+          <div class="container-fluid">
             <form>
-              <div class="col-md-6 form-line">
+		<div class="row">
+<div class="col-md-6 form-line">
                   <div class="form-group">
                     <label for="exampleInputUsername">Your name</label>
                     <input type="text" class="form-control" id="" placeholder=" Enter Name" required>
@@ -23,7 +25,7 @@
                     <input type="tel" class="form-control" id="telephone" placeholder=" Enter 10-digit mobile no.">
                   </div>
                 </div>
-                <div class="col-md-6">
+<div class="col-md-6">
                   <div class="form-group">
                     <label for ="description"> Message</label>
                     <textarea  class="form-control" id="description" placeholder="Enter Your Message"></textarea>
@@ -34,9 +36,12 @@
                   </div>
 
               </div>
+		</div>
+              
+                
             </form>
           </div>
          </div>
-		</section>
+</section>
 
  {%endblock%}

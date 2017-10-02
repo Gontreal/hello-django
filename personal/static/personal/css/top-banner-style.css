@@ -15,7 +15,9 @@
 
 .navbar.navbar-fixed-top {
 
-    border-color: #008080;
+    /*border-color: #008080;*/
+    border-color: #009900;
+    background-color:#003300;
 
 }
 .nav > li > a {

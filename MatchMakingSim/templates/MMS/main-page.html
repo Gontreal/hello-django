@@ -1,0 +1,27 @@
+{%extends "personal/header.html"%}
+{%block content%}
+ {% load staticfiles%}
+<!--style sheet-->
+<link rel="stylesheet" href="{% static 'MMS/css/style.css'%}" charset="utf-8" type="text/css" />
+<!--javascript-->
+<!--<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>-->
+
+
+<div class="jumbotron intro-box">
+<h1>A Match Making Simulation</h1>
+<h3 class="text-warning">In order to carry out this simulation, here are some instructions you need to know:</h3>
+    <ul class="rules-style">
+      <li class="text-info">First tell me <span class="text-warning">3 marks, in the scale of 100,</span>  on your appearence, personality and wealth.</li>
+      <li class="text-info"> Then tell me how you value those three qualities of your match, specifically, give me 3 ratios about your expectation for appearence, personality and wealth of your match and <span class="text-warning"> those 3 percentage should add up to 100.</span> </li>
+      <li class="text-info"> Lastlly, <span class="text-warning">tell me your gender</span>, natraully.</li>
+      <li class="text-info"> <span class="text-warning">Launch the Demo</span> is a normal round of matching process for you with the information you provide.</li>
+      <li class="text-info"><span class="text-warning">Validation</span> is a functional test for this simulation, which process 100 players in the script to see if they could found their supposed match, thus, to see if the algorithm is working properly and efficiently.</li>
+      <li class="text-info"> <span class="text-warning"> RESET</span> button is for reset the page after the operations mentioned above, which makes it ready to handle another request.</li>
+        
+    </ul>
+    {%include "MMS/includes/collapse.html"%}
+    {%include "MMS/includes/modal-form.html"%}
+</div>
+    {%include "MMS/includes/result.html"%}
+	<script type="text/javascript" src="{% static 'MMS/js/ajax-modal.js' %}"></script>
+{%endblock%}

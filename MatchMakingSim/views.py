@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .MMS.Match import Match,readPlayerFile
+from django.http import HttpResponseRedirect, HttpResponse
 import os
 script_dir=os.path.dirname(__file__)#abs dir the script in
 player_path=os.path.join(script_dir,"MMS/players.txt")
@@ -13,7 +14,7 @@ playerList=readPlayerFile(player_path)
 
 
 # Create your views here.
-def intro():
-    pass
-def match_engine():
+def intro(request):
+    return render(request,'MMS/main-page.html')
+def match_engine(request):
     pass
