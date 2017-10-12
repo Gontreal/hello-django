@@ -1,39 +1,44 @@
 from . import Match
 from nose.tools import *
-from libs import charactors
+# from ..libs import charactors
 from sometools import readPlayerFile
 
+# this test was written in ite own project for nosetests,
+# somehow I don't know how to launch it right in this project
+
 def test_initialize():
-    match=Match.Match("male.txt","female.txt")
-    #match.initialize("male1.txt","female1.txt")
-    assert_equal(match.queen.id(),101)
-    for k,v in match.men_pool.items():
-        assert_equal(v.q_size(),100)
-    assert_equal(len(match.men_pool),100)
-    assert_equal(len(match.women_pool),100)
+    match = Match.Match("male.txt", "female.txt")
+    # match.initialize("male1.txt","female1.txt")
+    assert_equal(match.queen.id(), 101)
+    for k, v in match.men_pool.items():
+        assert_equal(v.q_size(), 100)
+    assert_equal(len(match.men_pool), 100)
+    assert_equal(len(match.women_pool), 100)
     for m in match.men_pool.keys():
         assert_equal(m,match.men_pool[m].id())
     for w in match.women_pool.keys():
         assert_equal(w,match.women_pool[w].id())
 
-def test_player():
-    match=Match.Match("male.txt","female.txt")
-    match.add_player((1,24,45,34,30,30,40))
-    assert_equal(match.MainM.is_loaded(),True)
-    assert_equal(match.MainM.q_size(),100)
-    assert_equal(match.MainM.id(),-1)
-    assert_equal(match.MainM.appearence(),24)
-    assert_equal(match.MainM.personality(),45)
-    assert_equal(match.MainM.wealth(),34)
 
-    match.add_player((0,24,45,34,30,30,40))
-    assert_equal(match.MainF.is_loaded(),True)
-    for k,v in match.men_pool.items():
-        assert_equal(v.q_size(),101)
+def test_player():
+    match = Match.Match("male.txt", "female.txt")
+    match.add_player((1, 24, 45, 34, 30, 30, 40))
+    assert_equal(match.MainM.is_loaded(), True)
+    assert_equal(match.MainM.q_size(), 100)
+    assert_equal(match.MainM.id(), -1)
+    assert_equal(match.MainM.appearence(), 24)
+    assert_equal(match.MainM.personality(), 45)
+    assert_equal(match.MainM.wealth(), 34)
+
+    match.add_player((0, 24, 45, 34, 30, 30, 40))
+    assert_equal(match.MainF.is_loaded(), True)
+    for k, v in match.men_pool.items():
+        assert_equal(v.q_size(), 101)
+
 
 def test_queen():
-    match=Match.Match("male1.txt","female1.txt")
-    match.add_player((1,1,1,99,1,1,98))
+    match=Match.Match("male1.txt", "female1.txt")
+    match.add_player((1, 1, 1, 99, 1, 1, 98))
 
     match.make_invitation()
     assert_equal(match.queen.id(),1)
