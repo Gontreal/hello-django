@@ -12,6 +12,18 @@ body{
   background: linear-gradient(to left, #FFEEEE,#DDEFBB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   
 }
+
+#profile-img{
+ /*font-size:10 px; */
+ width:300px;
+}
+#sidebar .nav{
+  width:100px;
+}
+
+#sidebar .nav a{
+  font-size:1rem;
+} 
 .hr-style{
     height: 30px;
   border-style: solid;

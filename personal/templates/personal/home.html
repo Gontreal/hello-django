@@ -6,8 +6,8 @@
 
  <div class="row">
      <!--Left navbar affixed TODO: HIDDEN WHEN IN SMALL SCREEN-->
-    <div class="col-md-2 "  id="sidebar-wrapper">
-         <div id="sidebar" class="container" role="navigation">
+    <div class="col-md-1 " class="container-fluid"  id="sidebar-wrapper">
+         <div id="sidebar" role="navigation">
             <ul class="nav nav-pills nav-stacked  affix">
               <li role="presentation"><a href="#intro" >About me</a></li>
               <li role="presentation" ><a href="#projects">Projects I've Done</a></li>
@@ -17,10 +17,12 @@
             </div>
      </div>
     
-    <div class="col-md-10 col-sm-12" id="main-wrapper">
+    <div class="col-md-11 " id="main-wrapper">
       <!-- Profile Section-->
         <div class="jumbotron" id="intro">
-      {% include "personal/includes/profile.html"%}
+					<!--<div class="container-fluid">-->
+      			{% include "personal/includes/profile.html"%}
+					<!--</div>-->
     </div>
          <!--<hr class="hr-style">-->
     <!-- Project Section-->

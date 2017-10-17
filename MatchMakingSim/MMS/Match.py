@@ -1,4 +1,5 @@
 from .libs import charactors
+from random import randint
 
 
 class Match(object):
@@ -15,8 +16,8 @@ class Match(object):
                 mval.new_girl(wval)
         self.resultLog = []
 
-    def kick_start(self, line):
-        self.add_player(line)
+    def kick_start(self, line, option=1):
+        self.add_player(line, option)
         round = 0
         self.make_invitation()
         while self.matching_n_reset():
@@ -95,9 +96,13 @@ class Match(object):
         self.reset_women_pool()
         return True
 
-    def add_player(self, line):
+    def add_player(self, line, option=1):
+        # Option = 1 normal mode, 0 debug mode
         if line[0]:
-            id = 15
+            if option:
+                id = randint(0, 99)
+            else:
+                id = 15
             if self.men_pool.get(id):
                 self.men_pool[id].chosen()
 
@@ -111,7 +116,10 @@ class Match(object):
                 self.resultLog.append("Player's data is corrupted.")
 
         else:
-            id = 99
+            if option:
+                id = randint(0, 99)
+            else:
+                id = 99
             if self.women_pool.get(id):
                 self.women_pool[id].chosen()
 

@@ -20,12 +20,15 @@ $("#result-panel").collapse('toggle');
 $( document ).ready(function() {
 	//If match completed, this signal will disable the start button.
 	var matchComplete=false
+
 	//Reset the whole page
 	$("#reset-page").click(function(){
-		//Restore the start button
+		//Restore the start and valid button
 		matchComplete=false;
 		$('#LaunchSim').prop("disabled",false)
 		$('#LaunchSim').button('reset')
+		$('#valid').prop("disabled",false)
+		$('#valid').button('reset')
 
 		//$("#test").html("page reseted.")
 		//reset the inputs
@@ -54,10 +57,11 @@ $( document ).ready(function() {
 		var button = $(event.relatedTarget) // Button that triggered the modal
 		// Extract info from data-* attributes
 		//var recipient = button.data('whatever') 
-		//
 		//Check the input entries are all filled out
 		$('#LaunchSim').click(function(){
+			event.preventDefault();
 			var isFormValid=true;
+			//check the all blanks are filled
 			$("input").each(function(){
 				var temp=$.trim($(this).val());
 				if(!temp||temp<0||temp>100){
@@ -84,6 +88,7 @@ $( document ).ready(function() {
 				$("#gender-text").removeClass("text-danger");
 				$("#gender-text").addClass("text-success");
 			};
+			//Retrieve the data
 			var appear=$.trim($("#inputAppearence").val());
 			var person=$.trim($("#inputPersonality").val());
 			var wealth=$.trim($("#inputWealth").val());
@@ -117,9 +122,6 @@ $( document ).ready(function() {
 
 			//Start the ajax process:calling the server
 			$('#LaunchSim').button('loading')
-			event.preventDefault();
-			var form = $(this).closest("form");
-			//var csrftoken = getCookie('csrftoken');
 			$.ajaxSetup({
 				headers: {
 					"X-CSRFToken": getCookie("csrftoken"),
@@ -127,6 +129,7 @@ $( document ).ready(function() {
 
 				}
 			});
+			//Ajax request
 			$.ajax({
 				type:"POST",
 				url:"/MMS/matching/",
@@ -175,16 +178,75 @@ $( document ).ready(function() {
 			matchComplete=true;
 			$('#exampleModal').modal('hide');
 		});
+
 		// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
 		var modal = $(this);
 		//Disable the start button from lauching another request
 		if(matchComplete){
 			$('#LaunchSim').prop("disabled",true)
-			$('#form-status').html("You've found your match, click reset for another round")
+			modal.find('.modal-title').text('Click RESET Button for another round')
+			modal.find('.modal-title').addClass('text-warning')
+			//$('#form-status').html("You've found your match, click reset for another round")
 		};
 
-		//modal.find('.modal-title').text('Tell me about you ')
 		//modal.find('.modal-body input').val(recipient)
 	});
-	//console.log( "ready!" );
+	//Validation Button 
+	$('#valid').click(function(){
+		event.preventDefault();
+		$('#valid').button('loading')
+
+		$.ajaxSetup({
+			headers: {
+				"X-CSRFToken": getCookie("csrftoken"),
+				contentType: 'application/json'
+			}
+		});
+		//ajax request
+		$.getJSON("/MMS/matching/",function(ret){
+			//check the result
+			console.log("ajax success")
+			if(ret.Error){
+				console.log("match failed")
+				$('#logBox').empty();
+				$('#ret-msg').text("Test Failed: Something Wrong with the Algorithm.");
+				$('#result-panel').addClass("panel-danger");
+			}
+			else{
+				console.log("match succeed")
+				$('#logBox').empty();
+				$('#ret-msg').text("Test Passed, Click to see detailed log (Specifically the first and last player)");
+				$('#result-panel').addClass("panel-success");
+			
+			}
+			//update the result panel
+			for (var i = 0; i <ret.result.length; i++) {
+				$('#logBox').append('<li class="list-group-item text-center">'+ ret.result[i]+ '</li>')
+			}
+			// Update the list result
+			console.log(ret.ErrMsg)
+			switch(ret.ErrMsg){
+				case "01":
+					$('#logBox li:eq(0)').addClass("list-group-item-danger")
+					$('#logBox li:eq(-4)').addClass("list-group-item-success")
+					break;
+				case "10":
+					$('#logBox li:eq(0)').addClass("list-group-item-success")
+					$('#logBox li:eq(-4)').addClass("list-group-item-danger")
+					break;
+				case "00":
+					$('#logBox li:eq(0)').addClass("list-group-item-danger")
+					$('#logBox li:eq(-4)').addClass("list-group-item-danger")
+					break;
+				default:
+					$('#logBox li:eq(0)').addClass("list-group-item-success")
+					$('#logBox li:eq(-4)').addClass("list-group-item-success")
+			};
+			$("#result-panel").collapse('show');
+			$('#valid').button('complete')
+		})
+		$('#valid').prop("disabled",true)
+		return false;
+	});
+	console.log("READY")
 });

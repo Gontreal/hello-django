@@ -8,11 +8,6 @@ player_path = os.path.join(script_dir, "MMS/players.txt")
 male_path = os.path.join(script_dir, "MMS/male.txt")
 female_path = os.path.join(script_dir, "MMS/female.txt")
 
-# playerList = readPlayerFile(player_path)
-# match=Match(male_path,female_path)
-# for p in playerList:
-    # match.kick_start(p)
-
 
 # Create your views here.
 def intro(request):
@@ -55,3 +50,20 @@ def match_engine(request):
             ret["Error"] = True
             ret["ErrMsg"] = "Invalid Input."
             return JsonResponse(ret)
+    # get method for validation
+    playerList = readPlayerFile(player_path)
+    match = Match(male_path, female_path)
+    for p in playerList:
+        match.kick_start(p, 0)
+    # check the result
+    if "28" in match.resultLog[0]:
+        ret["ErrMsg"] += "1"
+    else:
+        ret["ErrMsg"] += "0"
+    if "33" in match.resultLog[-4]:
+        ret["ErrMsg"] += "1"
+    else:
+        ret["ErrMsg"] += "0"
+    ret["Error"] = False if ret["ErrMsg"] == "11" else True
+    ret["result"] = match.resultLog
+    return JsonResponse(ret)
