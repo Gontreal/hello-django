@@ -13,7 +13,7 @@
         <h4 class="modal-title" id="exampleModalLabel">Tell me about you</h4>
       </div>
       <div class="modal-body">
-	      <form class="form-horizontal" id="info-form" method="post" action="{% url 'matches:ajax-engine'%}" data-validate-url="{% url 'matches:ajax-engine' %}">
+	      <form class="form-horizontal" id="info-form" method="post" action="{% url 'matches:ajax-engine'%}">
 	{% csrf_token %}
           <p class="text-center" id="form-status"></p>
           <div class="row">

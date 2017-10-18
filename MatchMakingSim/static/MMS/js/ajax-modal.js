@@ -14,7 +14,6 @@ function getCookie(name) {
 	}
 	return cookieValue;
 }
-
 //Hide the result panel first
 $("#result-panel").collapse('toggle');
 $( document ).ready(function() {
@@ -126,7 +125,6 @@ $( document ).ready(function() {
 				headers: {
 					"X-CSRFToken": getCookie("csrftoken"),
 					contentType: 'application/json'
-
 				}
 			});
 			//Ajax request
@@ -161,12 +159,12 @@ $( document ).ready(function() {
 						$('#ret-msg').text(ret.result[0]);
 						$('#result-panel').addClass("panel-success");
 						for (var i = 0; i <ret.result.length; i++) {
-						if(i==1){
-							$('#logBox').append('<li class="list-group-item text-center list-group-item-info">'+ ret.result[i]+ '</li>')
-						}	
-						else{
-							$('#logBox').append('<li class="list-group-item text-center">'+ ret.result[i]+ '</li>')
-						}
+							if(i==1){
+								$('#logBox').append('<li class="list-group-item text-center list-group-item-info">'+ ret.result[i]+ '</li>')
+							}	
+							else{
+								$('#logBox').append('<li class="list-group-item text-center">'+ ret.result[i]+ '</li>')
+							}
 						}
 					}	
 				}
