@@ -1,5 +1,4 @@
 {%extends "personal/header.html"%}
-
 {%block content%}
  {% load staticfiles%}
 
@@ -20,10 +19,8 @@
     <div class="col-md-11 " id="main-wrapper">
       <!-- Profile Section-->
         <div class="jumbotron" id="intro">
-					<!--<div class="container-fluid">-->
-      			{% include "personal/includes/profile.html"%}
-					<!--</div>-->
-    </div>
+            {% include "personal/includes/profile.html"%}
+        </div>
          <!--<hr class="hr-style">-->
     <!-- Project Section-->
     <div id="projects" >
@@ -48,9 +45,8 @@
        <div class="col-md-4 col-lg-4 well well-lg">
          <address>
             <strong>Home Address</strong><br>
-              I guess you have to ask me,:)<br>
-              Montreal, QC 94103<br>
-             <abbr title="Phone">P:</abbr> (514) 623-0339 
+              Somewhere in Montreal, QC, Canada<br>
+             <abbr title="Phone">P:</abbr> ask me.
          </address>
 
          <address>
@@ -62,16 +58,21 @@
            gong900311<br>
            <abbr title="QQ">Q:</abbr> 236440817
         </address>
+         <address>
+          <strong>Skype</strong><br>
+           <!--go_zhan<br>-->
+           <abbr title="Username">N:</abbr> go_zhan<br>
+           Or search my email above.
+        </address>
          
-         <div>
+         <!-- <div>
          <strong>Social Network</strong><br>
            <br>
          <div class="container-fluid">
            <div class="row">
-            {% include "personal/includes/social-icon.html"%}
           </div>
         </div>
-       </div>
+       </div> -->
        </div>
        
        <div class="col-md-8 col-lg-8 ">
@@ -79,16 +80,6 @@
        </div>
      </div>
     </div><!-- End of Contact Section-->
-
-
-         
-        
      </div>
-     
  </div>
-      
-
-
-         
-  
 {%endblock%}

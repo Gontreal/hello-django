@@ -1,3 +1,6 @@
+.sicon{
+    padding-top: 5px;
+}
 .icon-circle .fa{
     font-size           : 30px;
     color               : #e84700;
@@ -41,14 +44,14 @@
 
 
  .icon-circle .fa{
-    font-size           : 10px;
+    font-size           : 20px;
     color               : #e84700;
     margin              : 0 auto;
-    height              : 30px;
-    width               : 30px;
+    height              : 40px;
+    width               : 40px;
     border-radius       : 50%;
     border              :2px solid #e84700;
-    line-height         : 30px;
+    line-height         : 40px;
     cursor              : pointer;
     -webkit-transition  : all  ease-in-out 0.35s;
     -moz-transition     : all  ease-in-out 0.35s;
@@ -76,7 +79,7 @@
 
 .icon-circle  i:before{
     margin-left         : 0px;
-    font-size           : 16px;
+    font-size           : 20px;
 }   
 }
 

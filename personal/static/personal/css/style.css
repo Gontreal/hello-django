@@ -4,7 +4,7 @@ html{
   min-height: 100% ;
 }
 body{
-  padding-top: 105px;
+  padding-top: 95px;
   padding-bottom: 60px;
   font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
   background: #3a6186; /* fallback for old browsers */
@@ -76,6 +76,35 @@ h5{
     font-size:1.3em;
   }
 
+./*social-media .fa {*/
+ /*padding: 20px;*/
+ /*font-size: 40px;*/
+ /*width: 90px;*/
+ /*text-align: center;*/
+ /*text-decoration: none;*/
+ /*margin: 5px 2px;*/
+/*}*/
+/*.social-media .fa:hover {*/
+    /*opacity: 0.7;*/
+/*}*/
+
+/*.social-media .fa-facebook {*/
+  /*background: #3B5998;*/
+  /*color: white;*/
+/*}*/
+/*.social-media .fa-linkedin {*/
+  /*background: #007bb5;*/
+  /*color: white;*/
+/*}*/
+/*.social-media .fa-github {*/
+  /*background: #2c4762;*/
+  /*color: white;*/
+/*}*/
+
+#intro-wrapper small{
+
+  font-family: 'Indie Flower','cursive'!important;
+}
 footer{
   position: absolute;
   right: 0;

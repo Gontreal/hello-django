@@ -12,12 +12,12 @@
 #contact{
     
   font-family: 'Teko', sans-serif;
-  padding-top: 20px;
-  padding-bottom: 40px;
+  padding-top: 5px;
+  padding-bottom: 10px;
   background: #DDEFBB; /* fallback for old browsers */  
 }
 .contact-section{
-  padding-top: 20px;
+  padding-top: 10px;
 }
 .contact-section .col-md-6{
   /*width: 50%;*/

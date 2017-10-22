@@ -3,11 +3,29 @@
 <div class="thumbnail">
             <img class="img-responsive" src="http://prodimage.images-bn.com/pimages/9780321884916_p0_v2_s1200x630.jpg" alt="web game">
             <div class="caption">
-              <h3>Web Game</h3>
-              <p>something about project 1</p>
+              <h3>A small text-based Webgame</h3>
+              <p>This is the final exercise of the book above that I read to
+              learn python, it's implemented on web.py framework in the book,
+              but I move it to Django, as a start point to get to know this
+              framework. I learnt: <ul>
+                <li>Basic python OOP analysis and design, implementing unit
+                    test cases both local and in the Django framework.</li>
+                <li>Knowledge about how website works: requests, get, post
+                    method.</li>
+                <li>Features of Django framework like test, session, Jinja
+                    logic, post form handling.</li>
+                <!-- <li>How session works, which is basically the core of this
+                    project.</li> -->
+            </ul></p>
+            <p> Please note that this game is still very
+            primitive, just for the purpose of getting the basic ideas of web
+            development.<br>But, I'm planning on enhancing the styles of this page and
+            most importantly, adding features like batter language processing in
+            the furture. </p>
               <p>
                   <a href="{% url 'games:welcome' %}" class="btn btn-primary" role="button">Learn more</a>   
-                  <a href="#" class="btn btn-default" role="button">Source Code</a>
+                  <a
+                      href="https://github.com/Gontreal/hello-django/tree/master/webgame" class="btn btn-default" role="button">Source Code</a>
              </p>
             </div>
           </div>

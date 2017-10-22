@@ -1,16 +1,15 @@
  {%block content%}
   {% load staticfiles%}
 <div class="row">
-  <!--<div class="container-fluid">-->
     <div class="col-md-8 col-lg-8 col-sm-12">
       <div class="container-fluid">
-        <h2>A little about me</h2>
+        <h2>A little  bit about me</h2>
         <h5>I am...</h5>
         <ul class="lead Iam">
-          <li>An awesome C++ and Python programer</li>
-          <li> Algorithm and datastruction master.</li>
-          <li>Familiar with HTML,CSS, JavaScript and Django and web.py framework. </li>
-          <li>The designer of this website and its upcomming applications. </li>
+          <li> An awesome c++ and a decent python programmer.</li>
+          <li> Algorithm and data structure master.</li>
+          <li>Familiar with HTML,CSS, JavaScript, Data Base and Django framework. </li>
+          <li>The designer of this website and all its current and upcomming applications. </li>
         </ul>
         <h5>I also have...</h5>
         <ul class="Ialso">
@@ -18,17 +17,38 @@
           <li>Good understanding of functional hardware verification methodology and experienced in building verification environment using System Verilog</li>
           <li>Solid background in control systems, digital communication system and modeling, simulating the systems in MATLAB and embedded system development</li>
         </ul>
-        <h5> Most importantly...</h5>
-        <p>I learnt things fast and I don't give up easily.</p>
-        <p> I'm an excellent teamplayer.</p>
-
+        <h5> Most importantly, I'm...</h5>
+        <p>a quick study and I don't give up easily.</p>
+        <p>a nice person to work with.</p>
       </div>
     </div>
     <div col-md-4 col-lg-4 col-sm-12>
       <div class=container-fluid>
-        <img class="img-responsive img-thumbnail" id="profile-img" src="{% static 'personal/images/profile.jpg' %}" alt="my avatar">
+          <div class="selfie" id="selfie-wrapper">
+            <img class="img-responsive img-thumbnail" id="profile-img" src="{% static 'personal/images/profile.jpg' %}" alt="my avatar">
+          </div>
+        <div class="self-intro" id="intro-wrapper">
+            <small>Hi, my name is Gong Zhang, 27 years old. I came to Canada four
+            years ago to pursue master degree in Concordia University. I was majored in
+            electrical and computer engineering, but I decided to dive into software 
+            field a year ago, and this website is a showcase of all the projects 
+            I've done while I've been building my skill set in software development. 
+            </small> <br>
+            <strong class="text-info">You can also find me on:</strong> <br>
+            <div class="row">
+            {% include "personal/includes/social-icon.html"%}
+                <!--<div class="col-md-4 col-sm-12">-->
+                    <!--<a href="#" class="fa fa-facebook"></a>-->
+                <!--</div>-->
+                <!--<div class="col-md-4 col-sm-12">-->
+                    <!--<a href="#" class="fa fa-linkedin"></a>-->
+                <!--</div>-->
+                <!--<div class="col-md-4 col-sm-12">-->
+                    <!--<a href="#" class="fa fa-github"></a>-->
+                <!--</div>-->
+            </div>
+        </div>
       </div>
     </div>
-  <!--</div>-->
 </div>
 {%endblock%}
