@@ -4,22 +4,62 @@
  {% block content %}
     <div class="row">
 	
-        <div class="col-md-10">
-            <table>
-                {% for post in object_list %}
-                    <h5 >{{ post.date|date:"Y-m-d" }} <a href="{% url 'blogs:Detail' post.id %}" >{{post.title}} </a></h5>
-                {% endfor %}
-            </table>
-        </div>
         <div class="col-md-2">
-           <div id="sidebar">
-            <ul class=" nav nav-tabs nav-stacked">
+           <div>
+            <!-- <ul class=" nav nav-tabs nav-stacked">
               <li role="presentation" ><a href="#intro" >About me</a></li>
               <li role="presentation" ><a href="#projects">Projects I've Done</a></li>
               <li role="presentation" ><a href="#contact-info">Contact me</a></li>
 
-            </ul>
+            </ul> -->
             </div>
+        
+        </div>
+        <div class="col-lg-8">
+            <div class="container-fluid">
+                <!--<table>-->
+                    {% for post in object_list %}
+                    <div class="well">
+                        <h5><a href="{% url 'blogs:Detail' post.id %}"
+                                >{{post.title}} </a></h5>
+                        <p>{{post.body|truncatewords:5|safe|linebreaks}}</p>
+                        <ul class="list-inline list-unstyled">
+                        <li>
+                        <a href="{% url 'blogs:Detail' post.id %}"
+                            >More...</a>
+                        </li>
+                        <li>|</li>
+                            <li><span><i class="glyphicon
+                            glyphicon-calendar"></i>{{ post.date|date:"Y-m-d" }}
+                                </span></li>
+                            <li>|</li>
+                            <span><i class="glyphicon glyphicon-comment"></i>
+                                no comment(not yet implemented)</span>
+                        </ul>
+                         
+                    </div>
+                    {% endfor %}
+                <!--</table>-->
+                
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="list-group">
+              <a href="#" class="list-group-item disabled">Timeline</a>
+              <a href="#" class="list-group-item disabled">Most Recent</a>
+              <a href="#" class="list-group-item disabled">My Story</a>
+                <a href="#" class="list-group-item disabled">About Projects</a>
+              <a href="#" class="list-group-item disabled"> Study Notes</a>
+                <a href="#" class="list-group-item disabled">Other Things</a>
+            </div>
+           <!-- <div>
+            <ul class=" nav nav-tabs nav-stacked">
+              <li><a href="#intro" >About me</a></li>
+              <li ><a href="#projects">Projects I've Done</a></li>
+              <li><a href="#contact-info">Contact me</a></li>
+
+            </ul>
+            </div> -->
         </div> 
     </div>
 {%endblock%}
