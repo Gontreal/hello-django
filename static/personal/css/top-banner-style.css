@@ -1,0 +1,52 @@
+.navbar-brand {
+    font-size: 24px;
+  font-family: 'Indie Flower','cursive';
+  color:#A43931;
+  font-weight:bold;
+
+}
+
+
+.navbar-container {
+    padding: 20px 0 20px 0;
+
+
+}
+
+.navbar.navbar-fixed-top {
+
+    /*border-color: #008080;*/
+    border-color: #009900;
+    background-color:#003300;
+
+}
+.nav > li > a {
+
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.navbar.navbar-fixed-top.fixed-theme {
+    background-color: #222;
+    border-color: #080808;
+    box-shadow: 0 0 5px rgba(0,0,0,.8);
+}
+
+.navbar-brand.fixed-theme {
+    font-size: 18px;
+}
+
+.navbar-container.fixed-theme {
+    padding: 0;
+}
+
+.navbar-brand.fixed-theme,
+.navbar-container.fixed-theme,
+.navbar.navbar-fixed-top.fixed-theme,
+.navbar-brand,
+.navbar-container{
+    transition: 0.8s;
+    -webkit-transition:  0.8s;
+}
