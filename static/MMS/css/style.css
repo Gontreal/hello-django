@@ -1,0 +1,14 @@
+.rules-style{
+  font-size: 3rem;
+  /*font-weight:bold;*/
+  font-family:'Teko',Arial;
+}
+.intro-box h1{
+  font-family:'Helvetica Neue',cursive;
+  font-weight:bold;
+}
+.intro-box h3{
+  font-family: 'Teko',cursive!important;
+  /*color:#A43931;*/
+  font-size: 3rem;
+}	
