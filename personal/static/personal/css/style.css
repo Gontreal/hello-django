@@ -13,10 +13,10 @@ body{
   
 }
 
-#profile-img{
- /*font-size:10 px; */
- width:300px;
-}
+/*#profile-img{*/
+ /*[>font-size:10 px; <]*/
+ /*width:300px;*/
+/*}*/
 #sidebar .nav{
   width:100px;
 }
