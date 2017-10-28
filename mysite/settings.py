@@ -25,7 +25,9 @@ SECRET_KEY = '$20fwq4ry_!_n^cs+)c-u8_t9!ap6s@chiqpw!1e708jt#ei5+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['138.197.142.139']
+ALLOWED_HOSTS = ['138.197.142.139',
+                 'gongzhang.me',
+                 'www.gongzhang.me']
 
 
 # Application definition
